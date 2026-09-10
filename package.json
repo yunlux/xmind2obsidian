@@ -1,10 +1,18 @@
 {
-  "name": "xmind2canvas",
-  "version": "0.1.0",
-  "description": "Convert XMind Zen mind maps to JSON Canvas files.",
-  "main": "src/convert.js",
+  "name": "xmind2obsidian",
+  "version": "0.2.0",
+  "description": "Convert XMind mind maps to Obsidian Canvas or Excalidraw files.",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yunlux/xmind2obsidian.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yunlux/xmind2obsidian/issues"
+  },
+  "homepage": "https://github.com/yunlux/xmind2obsidian#readme",
   "bin": {
-    "xmind2canvas": "bin/xmind2canvas.js"
+    "xmind2obsidian": "bin/xmind2obsidian.js"
   },
   "scripts": {
     "check": "npm test",
@@ -21,17 +29,19 @@
   ],
   "keywords": [
     "xmind",
+    "obsidian",
     "json-canvas",
     "canvas",
+    "excalidraw",
     "mind-map",
     "converter"
   ],
   "type": "commonjs",
   "license": "MIT",
   "dependencies": {
-    "@wllzhang/xmind-to-canvas": "^1.1.6"
-  },
-  "devDependencies": {
-    "jszip": "3.10.1"
+    "@wllzhang/xmind-to-canvas": "^1.1.6",
+    "fast-xml-parser": "5.11.1",
+    "jszip": "3.10.1",
+    "lz-string": "1.5.0"
   }
 }

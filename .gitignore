@@ -15,6 +15,7 @@ dist/
 # Conversion output and source files containing personal data
 *.canvas
 *.xmind
+*.excalidraw.md
 /2014.md
 /mmb_b64.txt
 
