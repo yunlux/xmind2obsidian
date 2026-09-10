@@ -1,0 +1,27 @@
+# Dependencies and generated output
+node_modules/
+coverage/
+dist/
+*.log
+
+# Local configuration and editor files
+.env
+.env.*
+!.env.example
+.DS_Store
+.idea/
+.vscode/
+
+# Conversion output and source files containing personal data
+*.canvas
+*.xmind
+/2014.md
+/mmb_b64.txt
+
+# Local exploratory scripts and browser previews
+/build_md.js
+/compare_files.js
+/convert_one.js
+/mmb_*.html
+/preview*.html
+/test_render.html

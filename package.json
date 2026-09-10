@@ -1,0 +1,37 @@
+{
+  "name": "xmind2canvas",
+  "version": "0.1.0",
+  "description": "Convert XMind Zen mind maps to JSON Canvas files.",
+  "main": "src/convert.js",
+  "bin": {
+    "xmind2canvas": "bin/xmind2canvas.js"
+  },
+  "scripts": {
+    "check": "npm test",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "bin",
+    "src",
+    "LICENSE",
+    "README.md"
+  ],
+  "keywords": [
+    "xmind",
+    "json-canvas",
+    "canvas",
+    "mind-map",
+    "converter"
+  ],
+  "type": "commonjs",
+  "license": "MIT",
+  "dependencies": {
+    "@wllzhang/xmind-to-canvas": "^1.1.6"
+  },
+  "devDependencies": {
+    "jszip": "3.10.1"
+  }
+}
