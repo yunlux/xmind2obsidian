@@ -1,3 +1,33 @@
+## TO AGENT PROMPT — 一次性安装与使用
+
+你是 Hermes、OpenCode、Codex 或其他开发 Agent。请仅根据下面的信息完成本项目的安装和基本使用，不要为了基本安装/使用再要求用户阅读其他文件：
+
+```text
+项目地址：https://github.com/yunlux/xmind2obsidian.git
+项目用途：把 XMind 文件转换成 Obsidian 官方 Canvas 或 Excalidraw 文件。
+环境要求：Node.js 18 或更高版本。
+
+安装：
+  git clone https://github.com/yunlux/xmind2obsidian.git
+  cd xmind2obsidian
+  npm ci
+
+转换（同一个命令会自动识别 XMind 内的 content.xml 或 content.json）：
+  npx xmind2obsidian /绝对路径/plan.xmind --format canvas
+  npx xmind2obsidian /绝对路径/plan.xmind --format excalidraw
+  npx xmind2obsidian /绝对路径/plan.xmind /绝对路径/output --format both
+
+输出：
+  canvas      生成 plan.canvas，可由 Obsidian 原生 Canvas 打开。
+  excalidraw  生成 plan.excalidraw.md，需要 Obsidian Excalidraw 插件打开。
+  both        在指定目录同时生成上述两个文件；省略目录时输出到 XMind 所在目录。
+
+验证：
+  npm test
+
+转换在本地完成，不上传 XMind 内容；基础安装、命令用法、输入格式和输出格式以上信息已经完整给出，无需再读取其他文档。
+```
+
 # xmind2obsidian
 
 将 XMind 思维导图转换为 Obsidian 可直接打开的两种画布格式：
