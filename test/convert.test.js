@@ -131,6 +131,24 @@ test('writes both Obsidian formats to a directory', async (t) => {
   assert.equal(decompressScene(await fs.readFile(result.excalidrawPath, 'utf8')).elements.length, 5);
 });
 
+test('one conversion entry point handles both XMind content formats', async (t) => {
+  const directory = await fs.mkdtemp(path.join(os.tmpdir(), 'xmind2obsidian-'));
+  t.after(() => fs.rm(directory, { recursive: true, force: true }));
+
+  const cases = [
+    ['zen', await createZenFixture(), 'zen'],
+    ['legacy', await createXmlFixture(), 'xml'],
+  ];
+  for (const [name, buffer, expectedFormat] of cases) {
+    const inputPath = await writeFixture(directory, `${name}.xmind`, buffer);
+    const result = await convertFileToBoth(inputPath, path.join(directory, `${name}-output`));
+    assert.equal(result.parsed.format, expectedFormat);
+    assert.equal(result.canvas.nodes.length, 2);
+    assert.equal(result.canvas.edges.length, 1);
+    assert.equal(decompressScene(result.excalidraw).elements.filter((element) => element.type === 'arrow').length, 1);
+  }
+});
+
 test('parses CLI formats and output names', () => {
   assert.equal(replaceXMindExtension('/tmp/plan.XMIND', '.canvas'), '/tmp/plan.canvas');
   assert.equal(replaceXMindExtension('/tmp/plan', '.excalidraw.md'), '/tmp/plan.excalidraw.md');
