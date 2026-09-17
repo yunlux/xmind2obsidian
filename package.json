@@ -41,7 +41,7 @@
   "dependencies": {
     "@wllzhang/xmind-to-canvas": "^1.1.6",
     "fast-xml-parser": "5.11.1",
-    "jszip": "3.10.1",
+    "jszip": "3.10.2",
     "lz-string": "1.5.0"
   }
 }
